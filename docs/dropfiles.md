@@ -2,7 +2,7 @@
 
 ## Formats
 * DOOR.SYS
-* [DOOR32.SYS](dropfile_formats/door32_sys.md)
+* [DOOR32.SYS](dropfile_formats/door32_sys.txt)
 * DORINFO1.DEF
 * DORINFO#.DEF
 * CHAIN.TXT
