@@ -1,0 +1,482 @@
+Proposed DTS-0001 0.07 beta standard follows:
+
+| This document is (C) 1993 Daniel Mecklenburg, and is posted to the
+| Internet newsgroups with permission.
+| Daniel can be reached directly at:
+| Fidonet:  1:325/608
+| Internet: Daniel.Me...@f608.n325.z1.fidonet.org
+
+| - Will Burrow
+| Internet: t0...@unb.ca
+|           wi...@p1.f14.n255.z1.fidonet.org)
+| Fidonet:  1:255/14.1
+`--------------------------------------------------------------------
++-----------------------------------------------------------------------+
+|   Document: DTS-0001  (Doorware Technical Standard doc 0001)          |
+|    Version: 0.07 beta                                                 |
+|       Date: January 14, 1992                                          |
++-----------------------------------------------------------------------+
+
+ I. NOTES ABOUT THIS DOCUMENT
+
+    Any line in the DTS-0001 document beginning with a | means that it is
+    an update from the previous version.
+
+    Any line in the DTS-0001 document beginning with a * means that it is
+    currently under debate.
+
+    This document is put together in the  attempt to establish a standard
+    file format for information to be passed between BBS software and BBS
+    doorware.  Please  leave comments  about missing (non-board specific)
+    information or settings that require ammendment.  This  can only be a
+    standard if everyone agrees upon its contents. Please contribute.
+
+    The file that these settings appear in should  be called DROPFILE.###
+    where ###  represents the  node which  is creating the dropfile.  For
+    example  Node 1 would create DROPFILE.001.  The  dafault filename for
+    single node BBS is DROPFILE.001.
+
+    If the  users  information  is changed by  the door  called  with the
+    DROPFILE file,  these changes should be  written to a new file called
+    CHANGES.### where ### represents  the node which is going  to read in
+    the changes and alter the users account. This file is optional. It is
+    only intended for those BBS's which support bidirectional information
+    to be passed between the board and doors.
+
+    It should  be assumed that any door  requiring this file will find it
+    in  the default BBS directory  (thus you must  tell the door where it
+    is.)
+
+    Doorware authors using this format  should include a freeware copy of
+    a dropfile conversion  utility that will convert other dropfile files
+    to the  DTS-0001  format.  This utility  is  as yet  undeveloped.  If
+    people would  supply me with other dropfile standards,  I could start
+    compiling a list and shall write this program for DOS based machines.
+
+    The information being passed from BBS software and doors should be in
+    the following  format.   These configuration  settings should  not be
+    limited to appear in the dropfile in any specific sequence.
+
+    Settings  found in DROPFILE.### should not be required.  There should
+    be developed a list of default settings for each entry.
+
+
+ II. STANDARD DATA VALUES
+
+    Some standard formats are  proposed for information appearing  inside
+    the DROPFILE.### file. These are:
+
+|       Phone numbers:      <country>-<area>-<exchange>-<number>
+|           This  is the  format adopted  by the Fidonet  standard and is
+|           used in many applications.
+|
+|       Dates:              <month>/<day>/<year>
+|           The year should be  expressed as a four digit quantity due to
+|           the impending year 2000. Month ranges from 0 and 12, day ranges
+|           from 1 to 31, and year ranges from 0 to 32767 <g>.
+|
+|       Times:              <hour>:<minute>
+|           expressed in 24 hour format. Hour ranges from 0 to 23 and
+|           minute ranges from 0 and 59.
+|
+|       Time till/left:     <minutes>
+|           All time until and time left  commands should be expressed in
+|           minutes. Minutes range from 0 to 32767.
+|
+|       Net addresses:      <zone>:<net>/<node>.<point>@<organization>
+|           Expressed  as a 5d net  address including the zone,  network,
+|           node, optional point, and optional organization. These values
+|           (except the organization of course) have values between 0 and
+|           32767.
+|
+|       File sizes:         <kilobytes>
+|           Expressed in number of kilobytes. Kilobytes range from 0 to
+|           2147483647 (signed long).
+|
+|       Ons and offs:       <n|0>
+|           Expressed as the value n or 0 for ON or OFF whereas n is any
+|           non-zero value.
+|
+|       Modes:              <mode1> [,<mode2>...]
+|           The display modes supported by the user are as follows (one or
+|           more of these may appear separated by commas):
+|
+|               Key         Description
+|               ----------- ---------------------------------------
+|               ANSI        (use ANSI codes)
+|               AVATAR      (use Avatar codes)
+|               VT100TAB    (use VT100 tab codes)
+|               VT102       (use VT102 codes)
+|               VT52        (use VT52 codes)
+|               YALE        (use YALE BBS codes)
+|               CBM         (use Commodore set)
+|               IBM         (use IBM set)
+|               HIGH        (accept high bit ascii / don't remap)
+|               TTY         (don't accept high bit ascii / remap)
+|               ETGC        (ETGC graphics protocol)
+|               NAPLPS      (NAPLPS graphics protocol)
+|               COLOR       (use color information)
+|               MONO        (use monochrome information)
+|
+|       Protocols:          <protocol>
+|           The protocols are defined below. These are expressed as a string
+|           not more than 16 characters in length.
+|
+|               Protocol    Description
+|               ----------- ---------------------------------------
+|               CISB        CompuServe B-Modem
+|               JMODEM      J-Modem protocol
+|               KERMIT      Kermit
+|               TELINK      Telink
+|               XMODEM      X-Modem
+|               XMODEM1K    X-Modem 1k
+|               YMODEM      Y-Modem
+|               YMODEMG     Y-Modem G
+|               ZMODEM      Z-Modem
+|               ZMODEMCRC   Z-Modem CRC
+|               ZMODEMRR    Z-Modem Recover/Resume
+|
+
+ III. CONFIGURATION SETTING
+
+    All the  information found in the DTS-0001 style  drop file is in the
+    format  LABEL = DATA.  The infomation  may appear  in any order.  The
+    settings are  not columnated  (equal sign does not appear in the same
+    place all the time).
+
+    A. System configuration settings (one for each node):
+
+        BOARD       = <board name>
+|           Description:    This setting contains the name of the BBS.
+|           Range:          String not more than 32 character in length.
+|           Example:        BOARD = Any ol' BBS
+
+        SOFTWARE    = <bbs software tag>
+|           Description:    This setting briefly describes the bbs software
+|                           creating the dropfile.
+|           Range:          String not more than 32 character in length.
+|           Example:        SOFTWARE = TAG BBS 2.6c9z gamma
+
+        NETADDRESS  = <node address [, node address ...]>
+|           Description:    This setting lists the fido-type net addresses
+|                           for the system.
+|           Range:          As per FTS-0005.
+|           Example:        NETADDRESS = 1:234/567.8, 75:1234/56
+
+        MAXSECURITY = <maximum security level of node>
+|           Description:    This setting contains the maximum security level
+|                           used by the BBS. In most cases, this value will
+|                           be identical to the SysOp's security level.
+|           Range:          0 - 2,147,483,647 (signed long integer)
+|           Example:        MAXSECURITY = 255
+
+        SYSOP       = <sysops name>
+|           Description:    This setting contains the name of the SysOp.
+|           Range:          String not more than 32 characters in length.
+|           Example:        SYSOP = John Q. Public
+
+        SYSOPAKA    = <sysops handle>
+|           Description:    This setting contains the SysOp's handle or
+|                           AKA as used on the BBS. (Note: if SYSOPAKA is
+|                           not furnished, SYSOP should be used when
+|                           describing the sysop.)
+|           Range:          String not more than 32 characters in length.
+|           Example:        SYSOP = The Hamster
+
+        BAUD        = <baud rate of user>
+|           Description:    This setting contains the baud rate the user is
+|                           currently using. This is the true baud rate and
+|                           not the effective baud rate. The reason for two
+|                           baud rates is for the determination of time for
+|                           downloading files and other simular operations
+|                           based on baud.
+|           Range:          0 - 2,147,483,647 (signed long integer)
+|           Example:        BAUD = 14400
+
+        MAXBAUD     = <maximum baud of node>
+|           Description:    This setting contains the maximum baud rate for
+|                           this node. This is the maximum baud of the modem
+|                           or the rate at which the modem is locked at.
+|           Range:          0 - 2,147,483,647 (signed long integer)
+|           Example:        MAXBAUD = 38400
+
+        LOCKEDBAUD  = <n|0>
+|           Description:    This tells the door if the modem is locked at
+|                           MAXBAUD.
+|           Range:          0 = no, n = yes where n is not 0 (signed
+|                           integer).
+|           Example:        LOCKEDBAUD = -1
+
+        PORT        = <portname>
+|           Description:    This setting tells the door which communications
+|                           port the node is connected to or if the user is
+|                           logged on locally.
+|           Range:          LOCAL = keyboard, COMn: = port where n is the
+|                           communication port number.
+|           Example:        PORT = COM2:
+
+        DATABITS    = <databits>
+|           Description:    This setting contains the number of databit the
+|                           communications port is using.
+|           Range:          7 or 8 (signed integer).
+|           Example:        DATABITS = 8
+
+        PARITY      = <parity>
+|           Description:    This setting contains the parity type that the
+|                           communications port is using.
+|           Range:          String containing N, E, O, M, or S.
+|           Example:        PARITY = N
+
+        STOPBITS    = <stopbits>
+|           Description:    This setting contains the number of stopbit the
+|                           communications port is using.
+|           Range:          0, 1, or 2 (signed integer).
+|           Example:        STOPBITS = 0
+
+        PORTADDR    = <addr>
+|           Description:    This setting contains the i/o address for the
+|                           communication port. This value must be expressed
+|                           as an decimal integer.
+|           Range:          0 - 32767 (signed integer)
+|           Notes:          03E8 hex = 1000 decimal
+|           Example:        PORTADDR = 1000
+
+        PORTIRQ     = <irq>
+|           Description:    This setting contains the irq number that the
+|                           communication port is using. This value must be
+|                           expressed as an decimal integer.
+|           Range:          0 - 32767 (signed integer)
+|           Example:        PORTIRQ = 5
+
+        NEXTEVENT   = <minutes until next event>
+|           Description:    This setting contains the number of minutes until
+|                           the next system event.
+|           Range:          0 - 32767 (signed integer)
+|           Example:        NEXTEVENT = 90
+
+
+    B. User configuration settings (one for each user):
+
+        USER        = <users name>
+|           Description:    This setting contains the name of the user.
+|           Range:          String not more than 32 characters in length.
+|           Example:        USER = John Dough
+
+        USERAKA     = <users handle>
+|           Description:    This setting contains the handle or AKA of the
+|                           user.
+|           Range:          String not more than 32 characters in length.
+|           Example:        USERAKA = File Monger
+
+        ORIGIN      = <users origin>
+|           Description:    This setting contains the city/state from where
+|                           the user is calling.
+|           Range:          String not more than 32 characters in length.
+|           Example:        ORIGIN = Lake Placid, NY
+
+        VOICEPHONE  = <users voice number>
+|           Description:    This contains the users voice telephone number.
+|           Range:          As per FTS-0005.
+|           Example:        VOICEPHONE = 1-518-555-1234
+
+        DATAPHONE   = <users data number>
+|           Description:    This contains the users data telephone number.
+|           Range:          As per FTS-0005.
+|           Example:        DATAPHONE = 1-518-555-9876
+
+        PASSWORD    = <users password>
+|           Description:    This setting contains the users system password.
+|           Range:          String not more than 32 characters in length.
+|           Example:        PASSWORD = QWERTY
+
+        SECURITY    = <users security level>
+|           Description:    This setting contains the security level of the
+|                           user.
+|           Range:          0 - 2,147,483,647 (signed long integer)
+|           Example:        SECURITY = 30
+
+        CALLS       = <total calls by user>
+|           Description:    This setting contains the total number of calls
+|                           to the bbs the user has made to date.
+|           Range:          0 - 32,767 (signed integer)
+|           Example:        CALLS = 135
+
+        LASTCALLED  = <date of last call>
+|           Description:    This setting contains the date of the users last
+|                           call to the bbs.
+|           Range:          (see formats above : Dates)
+|           Example:        LASTCALLED = 12/31/1999
+
+        LASTTIME    = <time of last call>
+|           Description:    This setting contains the time at which the user
+|                           logged off the bbs during his/her last call.
+|           Range:          (see formats above : Times)
+|           Example:        LASTTIME = 23:45
+
+        THISTIME    = <time of this call>
+|           Description:    This setting contains the time at which the user
+|                           logged onto the bbs during this call.
+|           Range:          (see formats above : Times)
+|           Example:        THISTIME = 14:02
+
+        TIMELEFT    = <minutes left this call>
+|           Description:    This setting contains the number of minutes the
+|                           user has left during this call. Be sure to
+|                           compare this against NEXTEVENT before altering.
+|           Range:          (see formats above : Minutes)
+|           Example:        TIMELEFT = 180
+
+        HEIGHT      = <users screen rows per page>
+|           Description:    This setting contains the number of rows the
+|                           users screen is configured with.
+|           Range:          1 - 32767 (signed integer).
+|           Example:        HEIGHT = 24
+
+        WIDTH       = <users screen row width>
+|           Description:    This setting contains the number of columns the
+|                           users screen is configured with.
+|           Range:          1 - 32767 (signed integer).
+|           Example:        WIDTH = 132
+
+        MODES       = <mode1 [, mode2 ...]>
+|           Description:    This setting describes the display modes that
+|                           the user is configured to handle.
+|           Range:          One or more of the following keys separated by
+|                           commas: ANSI, AVATAR, VT100TAB, VT102, VT52,
+|                           CBM, IBM, HIGH, TTY, ETGC, NAPLPS, COLOR, MONO,
+|                           YALE. These keys are described above in formats
+|                           : Modes).
+|           Example:        MODES = ANSI, AVATAR, COLOR
+
+        EXPIRES     = <account expiration date>
+|           Description:    This setting contains the date when the users
+|                           account on the bbs will expire.
+|           Range:          (see formats above : Dates)
+|           Example:        EXPIRES = 12/31/1999
+
+        PROTOCOL    = <users protocol of choice>
+|           Description:    This setting contains the upload/download
+|                           protocol of choice for the user.
+|           Range:          (see formats above : Protocols)
+|           Example:        PROTOCOL = ZMODEM
+
+        UPLOADS     = <users total number of uploads>
+|           Description:    This setting contains the total number of uploads
+|                           the user has made toward the bbs.
+|           Range:          0 - 32767 (signed integer)
+|           Example:        UPLOADS = 156
+
+        UPLOADK     = <users total uploaded K>
+|           Description:    This setting contains the total number of
+|                           kilobytes of files the user has uploaded to
+|                           the bbs.
+|           Range:          (see formats above : File sizes)
+|           Example:        UPLOADK = 2046
+
+        DOWNLOADS   = <users total number of downloads>
+|           Description:    This setting contains the total number of
+|                           files the user has downloaded from the bbs.
+|           Range:          0 - 32767 (signed integer)
+|           Example:        DOWNLOADS = 21
+
+        DOWNLOADK   = <users total downloaded K>
+|           Description:    This setting contains the total number of
+|                           kilobytes of files the user has downloaded from
+|                           the bbs.
+|           Range:          (see formats above : File sizes)
+|           Example:        DOWNLOADK = 873
+
+        DOWNLOADMAX = <users download maximum K>
+|           Description:    This setting contains the maximum number of
+|                           kilobytes of files the user may download from
+|                           the bbs before being restricted in some manner.
+|           Range:          (see formats above : File sizes)
+|           Example:        DOWNLOADMAX = 875
+
+        BIRTHDAY    = <users bithdate>
+|           Description:    This setting contains the users date of birth.
+|           Range:          (see formats above : Dates)
+|           Example:        BIRTHDAY = 4/21/1960
+
+        TIMEBANKED  = <minutes in timebank>
+|           Description:    This setting contains the number of minutes the
+|                           users has in his/her time bank. Check with
+|                           NEXTEVENT before withdrawing time and putting it
+|                           into the users TIMELEFT...
+|           Range:          0 - 32767 (signed integer)
+|           Example:        TIMEBANKED = 60
+
+        TIMEPERMSG  = <minutes to bank per message post>
+|           Description:    This setting contains the number of minutes the
+|                           users gets put into his/her timeback for every
+|                           message posted.
+|           Range:          0 - 32767 (signed integer)
+|           Example:        TIMEPERMESSAGE = 0
+
+        CHATSLEFT   = <number of chats left>
+|           Description:    This setting contains the number of chats the
+|                           user may have with the sysop before being
+|                           denied.
+|           Range:          0 - 32767 (signed integer)
+|           Example:        CHATSLEFT = 1
+
+        PAGESLEFT   = <number of sysop pages left>
+|           Description:    This setting contains the number of unanswered
+|                           pages the user may make to the sysop before being
+|                           restricted/scolded.
+|           Range:          0 - 32767 (signed integer)
+|           Example:        PAGESLEFT = 1
+
+
+    C. Special request commands
+
+        REQFILE     = <file name>[, <file name>...]
+|           Description:    This setting contains one or more files that
+|                           the user is requesting for download.
+|           Range:          String not more than 64 characters in length.
+|           Example:        REQFILE = c:\bbs\files\textdoc.zip
+
+        REQFILES    = <files filelist name>
+|           Description:    This setting contains the name of a file which
+|                           contains a list of files that the user is
+|                           requestiong for download.
+|           Range:          String not more than 64 characters in length.
+|           Example:        REQFILES = c:\bbs\filelist.txt
+
+
+    D. Message handling commands
+
+        MSGAREA     = <text description of message area replying to>
+|           Description:    This setting describes the area to where the
+|                           message is going to be posted in.
+|           Range:          String not more than 32 characters in length.
+|           Example:        MSGAREA = DoorWare Echo (FidoNet)
+
+        REPLYINGTO  = <name of person replying to>
+|           Description:    This setting contains the name of the person
+|                           to whom the message is in respond to.
+|           Range:          String not more than 32 characters in length.
+|           Example:        REPLYINGTO = Margaret Thompson
+
+        REPLYTOPIC  = <topic reply is about>
+|           Description:    This setting contains the topic or subject
+|                           to which the message is being made.
+|           Range:          String not more than 32 characters in length.
+|           Example:        REPLYTOPIC = Those long stringy thing?
+
+        QUOTEFILE   = <file containing message replying to>
+|           Description:    This setting contains the file that contains
+|                           the text to which the message can be quoted from.
+|           Range:          String not more than 64 characters in length.
+|           Example:        QUOTEFILE = c:\bbs\quote.txt
+
+        REPLYFILE   = <file that will contain new message>
+|           Description:    This setting contains the file that will contain
+|                           the newly created message.
+|           Range:          String not more than 64 characters in length.
+|           Example:        REPLYFILE = c:\bbs\message.txt
+
+
+    Please  contribute  to this  proposal.  I will  attempt to  ammend and
+    append ideas  and will  repost updated  docs as  soon as  they become
+    available to me.
