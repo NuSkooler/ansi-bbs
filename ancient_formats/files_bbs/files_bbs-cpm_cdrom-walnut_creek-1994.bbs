@@ -1,0 +1,251 @@
+ CP/M CDROM, Sep. 1994.  Walnut Creek CDROM.
+ -------------------------------------------
+ Kaypro System Files
+ path: \kaypro
+ -------------------------------------------
+256CRKT.UPD  Corrected 256K Kaypro RAM circuit
+256NEW.ANS   Answer to Kaypro RAM upgrade problem
+84KP256.LBR  256K RAM for the KayPro '84's
+84KP256A.ARK 190K RAMdisk for '84 Kaypros - $40
+ADVENT1.ARK  No description available
+ADVENT2.ARK  No description available
+ALTDRIVE.LBR Dynamic re-configuration of DSKDRV
+ARTIE71.LBR  Block graphic editor for Kaypro
+ARTIST.LBR   Drawing program for Kaypro in Turbo
+AUTOBOOT.ARK AUTOBOOT.WS & MicroSphere ramdisk
+AUTOBOOT.WS  
+AUTOBOOT.WZ  Tips on auto-start at Kaypro bootup
+AUTOKEYS.LBR Configure Kaypro keypad
+BIOSMR12.LBR Improved Kaypro BIOS fast/more storg
+BRIEF-SQ.INF No description available
+COMMANDS.INF 
+COMMANDS.IQF No description available
+COPY.TXT     
+COPY.TZT     Kaypro autoboot a command at startup
+CPM-BOOK.INF 
+CPM-BOOK.IQF No description available
+CRHRDSFT.LBR WordStar <--> ASCII text conversion
+CURSOR.LBR   No description available
+DCOM.TXT     
+DCOM.TZT     Uncovering some secrets of D.COM
+DIRF37KP.LBR DIR list includes description
+DKUG-DEC.INF No description available
+DSKDRV13.LBR No description available
+DUALPORT.LBR Multiple console displays for Kaypro
+DUMP-AT.COM  No description available
+DUMP10.COM   No description available
+DUMP1084.DOC No description available
+DUMP1084.MAC 
+DUMP1084.MQC No description available
+DUMP24.COM   No description available
+DUMP24.DOC   No description available
+DUMP24.MAC   
+DUMP24.MQC   No description available
+DUMP484.COM  No description available
+DUMPKP1.LBR  Screen dump program for Kaypro 1
+DUMPKP84.COM No description available
+DUMPREAD.ME  No description available
+DVOAK.TQT    No description available
+DVORAK.TXT   
+FASTTERM.LBR Fast terminal program for Kaypro
+FILER.DTE    Perfect Filer patch for date problem
+FLTKP100.LBR Kaypro transfer to/from TRS mod 100
+FORMAT.TXT   
+FORMAT.TZT   Disk format options on Kaypros
+GRAF2K10.LBR No description available
+GRAFKII.LBR  No description available
+HARDDISK.TQT Add a hard disk to Kaypro-84 models
+HARDDISK.TXT 
+HARDNOTE.TQT Install harddisk on Kaypro /TurboROM
+HARDNOTE.TXT 
+HARNESS.TXT  
+HARNESS.TZT  Wiring harness problems with Kaypros
+HOTKEY11.LBR Arrow/keypad redefinition program
+INTPTCH3.LBR Kaypro FASTTERM/INTTERM improvements
+IOCAPKP.LBR  Captures console output for print
+K-DIAL11.LBR Phone auto-dialer for Kaypro '84
+K10CHESS.LBR No description available
+K10TIME.LBR  No description available
+K10Z33.LBR   ZCPR 33 install files for Kaypro 10
+K16---K2.TXT 
+K16---K2.TZT Connecting a Kaypro 16 to Kaypro 2
+K1KERM11.LBR Kermit-80 ver 4.05 - Kaypro 1
+K1SCREEN.INF 
+K1SCREEN.IZF Video escape sequences for Kaypro 1
+K256BIOS.LBR Software needed for Kaypro 256K mod
+K484TIMR.LBR No description available
+K4SKETCH.LBR Draw lines and pixels on Kaypro '84
+K4TIME11.LBR No description available
+K4X.DOC      
+K4X.DZC      Enhancements for Kaypro
+K4ZSYSIN.DOC 
+K4ZSYSIN.DQC Implementing ZCPR3 on Kaypro 4-84
+K83Z33.LBR   ZCPR33 install files for Kaypro 83
+KAY-DISK.INF 
+KAY-DISK.IZF Kaypro floppy disk formats
+KAY256.FIX   Fix to Kaypro 256K RAM disk mod
+KAY256.LBR   Install 256k chips on the Kaypro IV
+KAY256.MSG   No description available
+KAYAK.LBR    Kayak race for Kaypro systems
+KAYDIAG.LBR  Diagnostics for Kaypro II & IV.
+KAYEASEL.LBR Electronic graphics easel for Kaypro
+KAYINFO.LBR  Kaypro Information -- Keyboard etc.
+KAYMAINT.TXT 
+KAYMAINT.TZT Maintenance tips for Kaypro systems
+KAYPRO.SPD   No description available
+KAYPRO10.REV No description available
+KBSHW321.LBR No description available
+KCHRSET1.LBR No description available
+KP-ARROW.LBR Change values of Kaypro's arrow keys
+KP-CALUP.LBR Kaypro phone rolodex/dialing utility
+KP-CBOOT.DOC No description available
+KP-EDIT2.LBR Small WordStar-like editor for Kpro
+KP-HOST.LBR  Files for remote system on Kaypro
+KP-MEMBR.LBR Database manager for user groups
+KP-PORTS.INF 
+KP-PORTS.IQF No description available
+KP-RADAR.LBR No description available
+KP-UBIOS.MAC 
+KP-UBIOS.MZC Kaypro BIOS for 'U' ROM
+KP-VDUMP.LBR Screen dump for Graphic-type Kaypro
+KP-VERSN.TXT 
+KP-VERSN.TZT Cross reference of Kaypro ROM/BIOS
+KP-VT52.LBR  VT52 terminal emulator for Kaypro
+KP-ZDOS.LBR  Kaypro Self-install CP/M look-alike
+KP10BIOS.DOC No description available
+KP10BIOS.MAC 
+KP10BIOS.MQC No description available
+KP10MONY.LBR Money management package - Kaypro10
+KP10USER.LBR MASMENU replacement for Kaypro 10
+KP2-EDIT.LBR VDO-like text editor for Kaypro
+KP4TIME2.LBR No description available
+KPARKPAT.ARK Patch ARK02.COM for '84 Kaypro RTC
+KPBUMPER.ARK No description available
+KPBYE5.LBR   RCP/M system for Kaypro
+KPCLICK.LBR  Turn keyboard click on/off on Kaypros
+KPCLOCK.INF  No description available
+KPCUR20.LBR  Set shape of Kaypro cursor
+KPCW.LBR     Morse code practice using Kaypro
+KPDD10.LBR   Directory utility for the Kaypro
+KPDEV.LBR    Connecting printers, peripherals
+KPDIAG.LBR   Diagnostic utilities for the Kaypro
+KPEDFONT.LBR Editor for Bradford font files
+KPENG13.LBR  Disk analysis program for Kaypro
+KPFIXSEL.AQM Patch for select error on Kaypro
+KPFIXSEL.ASM 
+KPGRAFIC.TQT Info about graphics on the Kaypro
+KPGRAFIC.TXT 
+KPGRFCL1.LBR A graphic clock for the Kaypro
+KPIMP245.LBR IMP 245 for Kayrpo with Avatex modem
+KPINTRPT.MSG No description available
+KPKBD.LBR    Printable Kaypro keyboard templets
+KPKER405.LBR No description available
+KPLD517U.LBR Kaypro video text file display
+KPLTIME.AQM  TIME program for Kaypro with Legacy
+KPLTIME.ASM  
+KPMOVCPM.DOC 
+KPMOVCPM.DZC Problems with Kaypro MOVCPM
+KPNEWTRM.LBR Kaypro interrupt driven termnial pgm
+KPNUROM.LBR  Enhanced ROM for '83 Kaypros
+KPPATCH.AQM  No description available
+KPPATCH.ASM  
+KPRAMDSK.LBR Add 256K RAM disk to Kaypro '84
+KPRESET.LBR  No description available
+KPRO-8IN.INF No description available
+KPRO-BBS.MSG No description available
+KPRO-BOS.INF No description available
+KPRO-LAN.INF No description available
+KPRO-NET.INF No description available
+KPRO-VID.INF No description available
+KPROCNFG.DOC No description available
+KPRODEMO.LBR Connect six Kaypros for demos
+KPROLIST.BUG No description available
+KPROTERM.INF No description available
+KPRULE25.LBR Put column rule on Kaypro 25th line
+KPSETKEY.LBR Keypad re-definer for Kaypro
+KPSPEED.INF  No description available
+KPTRCLK.LBR  Caption for TurboRom time display
+KPU87MOD.INF 
+KPU87MOD.IQF Fix on early Kaypros for data errors
+KPVID.LBR    Kaypro programs use screen functions
+KPVLU102.LBR Video library utility for Kaypros
+KRAMDISK.TXT 
+KRAMDISK.TZT Make most of Kaypro with a RAM disk
+KSCREEN.INF  No description available
+KVIDTEX.LBR  No description available
+LAZY.TXT     
+LAZY.TZT     Fewer keystrokes for lazy Kuggers
+LINE25KP.DOC No description available
+M100-KP.ARK  Kaypro <--> TRS100 file transfers
+MASMENU.TXT  
+MASMENU.TZT  Thoughts on Kaypro's master menus
+METAKEYS.LBR Redefine Kaypro's vector keys/keypad
+MFDISK.INF   No description available
+MFDISK10.COM No description available
+MFDISK2.COM  No description available
+MFDISK4.COM  No description available
+NCCP84.LBR   CCP replacement for Kaypro 4-84
+NDSKMSTR.LBR No description available
+NEWRITKP.LBR Formatter for TOUR20
+NORING.LBR   Set Kaypro internal mdm answer mode
+NSWP2-KP.INF No description available
+OUTLINER.LBR Text outline processor
+PAIRP.LBR    Finds un-paired chars in PW files.
+PCALC110.PAT 
+PCALC110.PZT Use reverse video with Perfect Calc
+PF2ASC.LBR   Convert Perfect Filer files to ASCII
+PFCTWRTR.LBR PD Utils for Perfect Writer.
+PFLINES.TXT  
+PFLINES.TZT  Perfect Filer carriage returns
+PHN21.LBR    Modem Dialer and number lister
+PIX11.LBR    Play with Kaypro graphics
+PRFCLCUT.LBR Utilities for Perfect Calc
+PRFTCALC.LBR Utilities for Perfect Calc
+PROFILES.LBR Index of PROFILE articles - June, 85
+PW-SWAP.INF  No description available
+PW.TXT       
+PW.TZT       Printing PW documents
+PWCOMNDS.INF 
+PWCOMNDS.IQF No description available
+QC10-V13.LBR No description available
+RAMTOOLS.LBR RAM resident utility for Kaypro 4'84
+RCP-BEST.INF 
+RCP-BEST.IQF No description available
+REALTIME.TXT 
+REALTIME.TZT Accessing real time clock in Kaypros
+RESTART.INF  No description available
+SAVECRT.LBR  Turns off screen on video Kaypro
+SD-QUIET.LBR SD mod to quiet Kaypro 2-84 keyboard
+SETKP-IO.LBR Set Kaypro modem/printer serial port
+SHAFT.LBR    Demonstration of graphics on Kaypro
+SIDEARM.LBR  Limited notepad SideArm demo
+SKIPMAP.LBR  Skip rebuilding of allocation table
+SSTAT-KP.LBR STAT replacement for Kaypros
+STATLINE.LBR Turn Kaypro status line On/Off
+SWCOPY23.LBR Single drive file copy program
+TDD.LBR      Kaypro Telecommuncation for the Deaf
+TINKERK2.LBR No description available
+TINKR484.LBR No description available
+TOON12.LBR   Kaypro II-'83 save screen to disk
+TRANSKP4.LBR Transfer files between CP/M & MS-DOS
+TROMHINT.LBR Advent TurboROM Kaypro video speedup
+TROMPAT1.LBR No description available
+TRPATCH1.LBR Patch software on Kaypro w/TurboROM
+TRS2KPRO.TQT Pass data from Kaypro to TRS mod 100
+TRS2KPRO.TXT 
+TRSTATLN.LBR Enable/disable 25th line w/TurboROM
+TURBKPEX.LBR Forces cold boot for harddisk start
+TURBOROM.DOC 
+TURBOROM.DQC Theory of the TurboROM's operation
+TURBOSAF.LBR PARK heads of harddisk w/TurboROM
+TURBOSCR.INF 
+TURBOSCR.IQF 'Slow screen' problem with TurboROM
+TYPEKP84.LBR Touch typing tutor for Kaypro '84
+UROMKEYS.ASM 
+UROMKEYS.AZM Redefine function keys on Kaypro 'U'
+VDE-FIX.LBR  No description available
+VT100KAY.LBR VT100 emulator for Kaypro
+WS-KP25P.LBR IBM-style help line for Kaypro WS
+WS-UROM.FIX  
+WS-UROM.FQX  Patch to WordStar for Z-system BIOS
+WSKP.ARK     Redefine keypad for Kaypro/WordStar
